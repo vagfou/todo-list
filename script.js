@@ -21,6 +21,14 @@ function addTodo(todo) {
             todoEl.classList.add('completed')
         }
         todoEl.innerText = todoText
+
+        todoEl.addEventListener('click', () => todoEl.classList.toggle('completed'))
+        todoEl.addEventListener('contextmenu', (e) => {
+            e.preventDefault()
+            todoEl.remove()
+        })
+
+
         todosUl.appendChild(todoEl)
         input.value = ''
     }
